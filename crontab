@@ -1,0 +1,1 @@
+0 10 * * sun root curator --host nas.lan delete indices --older-than 1 --time-unit days --timestring '%Y.%m.%d'

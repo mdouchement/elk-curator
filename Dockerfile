@@ -6,5 +6,6 @@ RUN pip install elasticsearch-curator
 ADD crontab /etc/cron.d/curator-cron
 RUN chmod 0644 /etc/cron.d/curator-cron
 RUN touch /var/log/cron.log
+ADD entrypoint.sh /sbin/entrypoint.sh
 
-CMD crond && tail -f /var/log/cron.log
+ENTRYPOINT ["/sbin/entrypoint.sh"]
